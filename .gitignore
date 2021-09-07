@@ -18,3 +18,4 @@ animals/__pycache__/*
 foods/__pycache__/*
 events/migrations/__pycache__/0003_auto_20210907_0749.cpython-38.pyc
 events/migrations/__pycache__/0002_animal_animalinanevent_food_foodinanevent_staff.cpython-38.pyc
+events/migrations/__pycache__/0004_animal_animalinanevent_food_foodinanevent_staff.cpython-38.pyc
