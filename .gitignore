@@ -13,3 +13,15 @@ feeding_time/__pycache__/wsgi.cpython-38.pyc
 events/__pycache__/views.cpython-38.pyc
 events/__pycache__/urls.cpython-38.pyc
 events/__pycache__/
+staffs/__pycache__/
+animals/__pycache__/
+foods/__pycache__/
+animals/migrations/__pycache__/__init__.cpython-38.pyc
+foods/migrations/__pycache__/__init__.cpython-38.pyc
+staffs/migrations/__pycache__/__init__.cpython-38.pyc
+animals/migrations/__pycache__/0001_initial.cpython-38.pyc
+foods/migrations/__pycache__/0001_initial.cpython-38.pyc
+staffs/migrations/__pycache__/0001_initial.cpython-38.pyc
+animals/*
+foods/*
+staffs/*
