@@ -3,17 +3,6 @@ from django.db import models
 # Create your models here.
 
 
-class Staff(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    staff_name = models.CharField(max_length=100, blank=True, default='')
-
-    class Meta:
-        ordering = ['created']
-
-    def __str__(self):
-        return self.staff_name
-
-
 class Event(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     event_name = models.CharField(max_length=100, blank=True, default='')
@@ -25,28 +14,6 @@ class Event(models.Model):
 
     def __str__(self):
         return self.event_name
-
-
-class Food(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    food_name = models.CharField(max_length=50, blank=True, default='')
-
-    class Meta:
-        ordering = ['created']
-
-    def __str__(self):
-        return self.food_name
-
-
-class Animal(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    animal = models.CharField(max_length=60, blank=True, default='')
-
-    class Meta:
-        ordering = ['created']
-
-    def __str__(self):
-        return self.animal
 
 
 class FoodInAnEvent(models.Model):
