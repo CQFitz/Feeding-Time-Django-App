@@ -1,6 +1,18 @@
 # events/serializers
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Event, Staff, Animal, Food
+
+
+class UserSerializer(serializers.ModelSerializer):
+    events = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Event.objects.all()
+    )
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'events')
 
 
 class EventSerializer(serializers.ModelSerializer):
