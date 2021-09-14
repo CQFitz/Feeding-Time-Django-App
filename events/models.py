@@ -7,8 +7,9 @@ def layout(title: str, body: Frag) -> Frag:
     return html()(
         h("head")(
             h("title")(title),
+            h("link", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC", crossorigin="anonymous"),
         ),
-        h("body")(body)
+        h("body", klass="container")(body)
     ).render()
 
 
@@ -25,7 +26,9 @@ class Staff(models.Model):
         # those variable set in to a set create of data and save to html_content variable
         create_html = layout(self.staff_details, frag(
             h("h1")("Staff Detail"),
-            h("h2")(self.staff_details)
+            h("hr"),
+            h("h1")("Name"),
+            h("h2")(self.staff_details),
         ))
 
         self.html_content = create_html
@@ -74,28 +77,32 @@ class Food(models.Model):
     def save(self, *args, **kwargs):
         create_html = layout(self.food_details, frag(
             h("h1")("Food Detail"),
-            h("h2")(self.food_details)
+            h("hr"),
+            h("h1")("Name"),
+            h("h2")(self.food_details),
         ))
 
         self.html_content = create_html
         super(Food, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.food_name
+        return self.food_details
 
 
 class Animal(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    animal_detail = models.CharField(max_length=60, blank=True, default='')
+    animal_details = models.CharField(max_length=60, blank=True, default='')
     html_content = models.TextField()
 
     class Meta:
         ordering = ['created']
 
     def save(self, *args, **kwargs):
-        create_html = layout(self.animal_detail, frag(
+        create_html = layout(self.animal_details, frag(
             h("h1")("Animal Detail"),
-            h("h2")(self.animal_detail)
+            h("hr"),
+            h("h1")("Name"),
+            h("h2")(self.animal_details),
         ))
 
         self.html_content = create_html
@@ -117,9 +124,19 @@ class FoodInAnEvent(models.Model):
     def save(self, *args, **kwargs):
         create_html = layout(self.food_id, frag(
             h("h1")("Food Detail"),
+            h("hr"),
+            h("h1")("Name"),
             h("h2")(self.food_id),
+            h("br"),
             h("h1")("Event Detail"),
+            h("hr"),
+            h("h1")("Name"),
             h("h2")(self.event_id),
+            h("br"),
+            h("h1")("Staff Detail"),
+            h("hr"),
+            h("h1")("Name"),
+            h("h2")(self.event_id.staff_id)
         ))
 
         self.html_content = create_html
@@ -138,9 +155,19 @@ class AnimalInAnEvent(models.Model):
     def save(self, *args, **kwargs):
         create_html = layout(self.animal_id, frag(
             h("h1")("Animal Detail"),
+            h("hr"),
+            h("h1")("Name"),
             h("h2")(self.animal_id),
+            h("br"),
             h("h1")("Event Detail"),
+            h("hr"),
+            h("h1")("Name"),
             h("h2")(self.event_id),
+            h("br"),
+            h("h1")("Staff Detail"),
+            h("hr"),
+            h("h1")("Name"),
+            h("h2")(self.event_id.staff_id)
         ))
 
         self.html_content = create_html

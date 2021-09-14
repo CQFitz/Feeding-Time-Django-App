@@ -21,7 +21,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'event_name', 'event_description', 'other_details', 'staff_id', 'content')
+        fields = ('url', 'id', 'event_name', 'event_description', 'other_details', 'staff_id', 'content')
 
 
 class StaffSerializer(serializers.HyperlinkedModelSerializer):
@@ -30,7 +30,7 @@ class StaffSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Staff
-        fields = ('id', 'staff_details', 'content')
+        fields = ('url', 'id', 'staff_details', 'content')
 
 
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
@@ -39,7 +39,7 @@ class FoodSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Food
-        fields = ('id', 'food_details', 'content')
+        fields = ('url', 'id', 'food_details', 'content')
 
 
 class AnimalSerializer(serializers.HyperlinkedModelSerializer):
@@ -48,7 +48,7 @@ class AnimalSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Animal
-        fields = ('id', 'animal_details', 'content')
+        fields = ('url', 'id', 'animal_details', 'content')
 
 
 class FoodInAnEventSerializer(serializers.HyperlinkedModelSerializer):
@@ -57,7 +57,7 @@ class FoodInAnEventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = FoodInAnEvent
-        fields = ('id', 'food_id', 'event_id', 'content')
+        fields = ('url', 'id', 'food_id', 'event_id', 'content')
 
 
 class AnimalInAnEventSerializer(serializers.HyperlinkedModelSerializer):
@@ -66,4 +66,4 @@ class AnimalInAnEventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = AnimalInAnEvent
-        fields = ('id', 'animal_id', 'event_id', 'content')
+        fields = ('url', 'id', 'animal_id', 'event_id', 'content')
